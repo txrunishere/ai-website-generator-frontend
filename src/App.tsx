@@ -31,7 +31,7 @@ export const App = () => {
       if (prompt) {
         setResponseCode("");
         const response = await axios.post(
-          import.meta.env.VITE_BACKEND_URL,
+          `${import.meta.env.VITE_BACKEND_URL}/api/v1/ai/generate-code`,
           { prompt: `${prompt} using ${stackOption}` },
           { headers: { "Content-Type": "application/json" } }
         );
